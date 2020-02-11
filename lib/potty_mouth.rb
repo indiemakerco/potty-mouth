@@ -6,12 +6,14 @@ module PottyMouth
 		input_string = input_string.strip
 
 		en_words.each do |bad_word|
-			if input_string.include? bad_word
-				input_string.gsub!(bad_word, ("*" * bad_word.length))
-			end
+      input_string.gsub!(/bad_word/i, ("*" * bad_word.length))
 		end
 
 		input_string
+  end
+
+  def needs_a_scrub?(input)
+    #
   end
 
   def en_words
